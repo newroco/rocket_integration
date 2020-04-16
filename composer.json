@@ -1,0 +1,17 @@
+{
+    "name": "Messenger",
+    "description": "Rocket chat integration for Nextcloud",
+    "type": "project",
+    "license": "AGPL",
+    "authors": [
+        {
+            "name": "Orzu Ionut"
+        }
+    ],
+    "require": {
+        "nategood/httpful": "^0.3.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.4"
+    }
+}

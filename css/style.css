@@ -1,0 +1,27 @@
+#rocket-chat-iframe {
+	width: 100% !important;
+}
+
+@keyframes slideInFromLeft {
+	0% {
+		transform: translateX(-100%);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+.messenger--add-members-info {
+	animation: 1s ease-out 0s 1 slideInFromLeft;
+
+	position: absolute;
+	right: 5px;
+	background: #f3f3f3;
+	border-radius: 5px;
+	color: #333333;
+	padding: 2px 5px;
+}
+
+.messenger--hidden {
+	display: none;
+}

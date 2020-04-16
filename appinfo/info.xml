@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
+    <id>messenger</id>
+    <name>Messenger</name>
+    <summary>Rocket chat integration for Nextcloud</summary>
+    <description><![CDATA[Integrates Rocket Chat.]]></description>
+    <version>0.0.3</version>
+    <licence>agpl</licence>
+    <author mail="ionuto@newro.co" >Orzu Ionut</author>
+    <namespace>Messenger</namespace>
+    <category>social</category>
+    <bugs>https://github.com/orzuionut/messenger</bugs>
+
+    <dependencies>
+        <nextcloud min-version="15" max-version="19"/>
+    </dependencies>
+
+    <activity>
+        <settings>
+            <setting>OCA\Messenger\Activity\Setting</setting>
+        </settings>
+    </activity>
+
+    <settings>
+        <admin>OCA\Messenger\Settings\AdminSettings</admin>
+    </settings>
+</info>
