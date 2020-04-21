@@ -1,12 +1,12 @@
 <?php
 
-namespace OCA\Messenger\Controller;
+namespace OCA\RocketIntegration\Controller;
 
-use OCA\Messenger\Db\FileChat;
-use OCA\Messenger\Db\Config;
-use OCA\Messenger\Db\File;
-use OCA\Messenger\Rocket\Channel;
-use OCA\Messenger\Rocket\Discussion;
+use OCA\RocketIntegration\Db\FileChat;
+use OCA\RocketIntegration\Db\Config;
+use OCA\RocketIntegration\Db\File;
+use OCA\RocketIntegration\Rocket\Channel;
+use OCA\RocketIntegration\Rocket\Discussion;
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\JSONResponse;
 use OCP\IRequest;

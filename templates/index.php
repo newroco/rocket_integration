@@ -1,6 +1,6 @@
 <?php
-script('messenger', 'chat');
-style('messenger', 'style');
+script('rocket_integration', 'chat');
+style('rocket_integration', 'style');
 ?>
 
 <?php if ($_['new'] === '1') { ?>

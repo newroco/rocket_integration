@@ -1,6 +1,6 @@
 <?php
 
-namespace OCA\Messenger\Rocket;
+namespace OCA\RocketIntegration\Rocket;
 
 use Httpful\Request;
 

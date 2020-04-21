@@ -1,12 +1,12 @@
 <?php
 
-namespace OCA\Messenger\AppInfo;
+namespace OCA\RocketIntegration\AppInfo;
 
-use OCA\Messenger\Db\Config;
+use OCA\RocketIntegration\Db\Config;
 use OCP\AppFramework\App;
 
 class Application extends App {
-    const APP_ID = 'messenger';
+    const APP_ID = 'rocket_integration';
 
     public function __construct()
     {
@@ -35,7 +35,7 @@ class Application extends App {
             return [
                 'id' => self::APP_ID,
                 'order' => 11,
-                'name' => 'Messenger',
+                'name' => 'Rocket',
                 'href' => $server->getURLGenerator()->linkToRouteAbsolute(self::APP_ID . '.page.index'),
                 'icon' => $server->getURLGenerator()->imagePath(self::APP_ID, 'rocket-logo.png'),
 //                'type' => $user instanceof IUser ? 'link' : 'hidden', // Here we can also check if the app is disabled for the auth user..
@@ -47,7 +47,7 @@ class Application extends App {
     {
         $eventDispatcher = \OC::$server->getEventDispatcher();
         $eventDispatcher->addListener('OCA\Files::loadAdditionalScripts', function() {
-            script(self::APP_ID, 'messenger');
+            script(self::APP_ID, 'rocket_integration');
 //            style(self::name, 'styles');
         });
     }

@@ -1,8 +1,8 @@
 <?php
 
-namespace OCA\Messenger\Db;
+namespace OCA\RocketIntegration\Db;
 
-use OCA\Messenger\AppInfo\Application;
+use OCA\RocketIntegration\AppInfo\Application;
 
 class Config {
     protected $rocketChatUrlKey;

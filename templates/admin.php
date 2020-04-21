@@ -1,6 +1,6 @@
 <?php
-script('messenger', 'admin');
-style('messenger', 'style');
+script('rocket_integration', 'admin');
+style('rocket_integration', 'style');
 ?>
 
 <div class="section">

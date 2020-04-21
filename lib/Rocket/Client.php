@@ -1,9 +1,9 @@
 <?php
 
-namespace OCA\Messenger\Rocket;
+namespace OCA\RocketIntegration\Rocket;
 
 use Httpful\Request;
-use OCA\Messenger\Db\Config;
+use OCA\RocketIntegration\Db\Config;
 
 class Client
 {

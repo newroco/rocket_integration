@@ -1,8 +1,8 @@
 <?php
 
-namespace OCA\Messenger\Activity;
+namespace OCA\RocketIntegration\Activity;
 
-use OCA\Messenger\AppInfo\Application;
+use OCA\RocketIntegration\AppInfo\Application;
 use OCP\Activity\ISetting;
 use OCP\IL10N;
 

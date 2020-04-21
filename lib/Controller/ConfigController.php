@@ -1,9 +1,9 @@
 <?php
 
-namespace OCA\Messenger\Controller;
+namespace OCA\RocketIntegration\Controller;
 
-use OCA\Messenger\DB\Config;
-use OCA\Messenger\Db\FileChat;
+use OCA\RocketIntegration\DB\Config;
+use OCA\RocketIntegration\Db\FileChat;
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\RedirectResponse;
 use OCP\IRequest;

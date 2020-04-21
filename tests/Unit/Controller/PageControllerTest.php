@@ -1,12 +1,12 @@
 <?php
 
-namespace OCA\Messenger\Tests\Unit\Controller;
+namespace OCA\RocketIntegration\Tests\Unit\Controller;
 
 use PHPUnit_Framework_TestCase;
 
 use OCP\AppFramework\Http\TemplateResponse;
 
-use OCA\Messenger\Controller\PageController;
+use OCA\RocketIntegration\Controller\PageController;
 
 
 class PageControllerTest extends PHPUnit_Framework_TestCase {
@@ -17,7 +17,7 @@ class PageControllerTest extends PHPUnit_Framework_TestCase {
 		$request = $this->getMockBuilder('OCP\IRequest')->getMock();
 
 		$this->controller = new PageController(
-			'messenger', $request, $this->userId
+			'rocket_integration', $request, $this->userId
 		);
 	}
 

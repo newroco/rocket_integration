@@ -1,9 +1,9 @@
 <?php
 
-namespace OCA\Messenger\Settings;
+namespace OCA\RocketIntegration\Settings;
 
-use OCA\Messenger\AppInfo\Application;
-use OCA\Messenger\Db\Config;
+use OCA\RocketIntegration\AppInfo\Application;
+use OCA\RocketIntegration\Db\Config;
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\AppFramework\Controller;
 use OCP\Settings\ISettings;

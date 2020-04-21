@@ -8,7 +8,7 @@
     <charset>utf8</charset>
 
     <table>
-        <name>*dbprefix*messenger_file_chats</name>
+        <name>*dbprefix*rocket_integration_file_chats</name>
 
         <declaration>
             <field>

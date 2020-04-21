@@ -1,6 +1,6 @@
 <?php
 
-namespace OCA\Messenger\Db;
+namespace OCA\RocketIntegration\Db;
 
 class FileChat
 {
@@ -9,7 +9,7 @@ class FileChat
 
     public function __construct()
     {
-        $this->databaseName = 'messenger_file_chats';
+        $this->databaseName = 'rocket_integration_file_chats';
 
         $this->db = \OC::$server->getDatabaseConnection();
     }

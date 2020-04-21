@@ -1,6 +1,6 @@
 <?php
 
-namespace OCA\Messenger\Db;
+namespace OCA\RocketIntegration\Db;
 
 class File
 {
