@@ -28,8 +28,7 @@ class FileController extends Controller
     }
 
     /**
-     * Requires admin.
-     *
+     * @NoAdminRequired
      * @param $id
      * @param $name
      * @param $isGroupFolder

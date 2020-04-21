@@ -15,3 +15,8 @@ Place this app in **nextcloud/apps/**
 - Now you can access the Rocket Chat app from the navigation bar in NextCloud and open a new chat about a file by clicking the three dots icon and then clicking Rocket
 - In order to add members to a chat about a file directly from the discussion view an admin must go to "Administration -> Layout -> Interface" and check "Show top navbar in embedded layout"  
 - In order to change the Rocket Chat instance an admin can go to "Settings -> Administration -> Additional Settings" and then click the Reset Data button, this will remove the Rocket Chat URL, the Personal Access Token and the user Id from the database so you can change the Rocket Chat instance.
+
+## Browser Notifications
+While using NextCloud you can receive notifications from Rocket chat by allowing the browser to send desktop notifications.
+
+You can learn how to enable browser notifications here: https://support.google.com/chrome/answer/3220216?co=GENIE.Platform%3DDesktop&hl=en
