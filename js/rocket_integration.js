@@ -5,27 +5,14 @@
         if ($('#dir').length > 0) {
             OCA.Files.fileActions.registerAction({
                 name: 'open-rocket',
-                displayName: 'Rocket',
+                displayName: 'Discuss',
                 mime: 'all',
                 order: 1,
                 permissions: OC.PERMISSION_ALL,
                 type: OCA.Files.FileActions.TYPE_DROPDOWN, // @TODO MUST CHECK THIS.
                 icon: OC.imagePath('rocket_integration', 'rocket-logo-black.png'),
                 actionHandler: function (filename, context) {
-                    openMessenger(filename, context.$file, false);
-                }
-            });
-
-            OCA.Files.fileActions.registerAction({
-                name: 'new-discussion-messenger',
-                displayName: 'New discussion',
-                mime: 'all',
-                order: 1,
-                permissions: OC.PERMISSION_ALL,
-                type: OCA.Files.FileActions.TYPE_DROPDOWN,
-                icon: OC.imagePath('rocket_integration', 'rocket-logo-black.png'),
-                actionHandler: function (filename, context) {
-                    openMessenger(filename, context.$file, true);
+                    openMessenger(filename, context.$file);
                 }
             });
         }
@@ -36,14 +23,12 @@
      *
      * @param fileName
      * @param $file
-     * @param isNewDiscussion
      */
-    function openMessenger(fileName, $file, isNewDiscussion) {
+    function openMessenger(fileName, $file) {
         var data = {
             id: $file.attr('data-id'),
             name: $file.attr('data-file'),
             isGroupFolder: $file.attr('data-mounttype') === 'group' ? '1' : '0',
-            isNewDiscussion: isNewDiscussion ? '1' : '0',
         };
 
         $.ajax({

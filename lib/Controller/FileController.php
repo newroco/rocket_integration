@@ -32,10 +32,9 @@ class FileController extends Controller
      * @param $id
      * @param $name
      * @param $isGroupFolder
-     * @param $isNewDiscussion
      * @return JSONResponse
      */
-    public function store($id, $name, $isGroupFolder, $isNewDiscussion)
+    public function store($id, $name, $isGroupFolder)
     {
         if (!$id || !$name) {
             return new JSONResponse([
@@ -54,7 +53,7 @@ class FileController extends Controller
         }
 
         try {
-            $result = $this->getChat($id, $name, $isNewDiscussion);
+            $result = $this->getChat($id, $name);
         } catch (\Exception $exception) {
             return new JSONResponse([
                 'message' => $exception->getMessage(),
@@ -67,20 +66,18 @@ class FileController extends Controller
         ]);
     }
 
-    protected function getChat($id, $name, $isNewDiscussion)
+    protected function getChat($id, $name)
     {
         $fileChat = new FileChat();
 
-        if ($isNewDiscussion === '0') {
-            $record = $fileChat->getByFileId($id);
+        $record = $fileChat->getByFileId($id);
 
-            // Chat already exists in out DB.
-            if ($record && $record['chat_id']) {
-                return [
-                    'id' => $record['chat_id'],
-                    'isNew' => false,
-                ];
-            }
+        // Chat already exists in out DB.
+        if ($record && $record['chat_id']) {
+            return [
+                'id' => $record['chat_id'],
+                'isNew' => false,
+            ];
         }
 
         $channel = new Channel();
@@ -107,9 +104,7 @@ class FileController extends Controller
         $chatId = $createResponse['discussion']->name;
 
         // Only store in DB if the discussion is not a 'new discussion', only store in DB the general one.
-        if ($isNewDiscussion === '0') {
-            $fileChat->create($id, $chatId);
-        }
+        $fileChat->create($id, $chatId);
 
         return [
             'id' => $chatId,
