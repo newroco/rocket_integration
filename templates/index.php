@@ -1,3 +1,5 @@
+<input type="hidden" value="<?php p($_['customOAuthName']) ?>" id="custom-oauth-name">
+
 <?php
 script('rocket_integration', 'chat');
 style('rocket_integration', 'style');

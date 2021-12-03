@@ -13,6 +13,7 @@ return [
 	   ['name' => 'page#file', 'url' => '/file-chat', 'verb' => 'GET'],
 	   ['name' => 'config#setupUrl', 'url' => '/setup-url', 'verb' => 'POST'],
 	   ['name' => 'config#resetConfig', 'url' => '/reset-config', 'verb' => 'POST'],
+	   ['name' => 'config#updateCustomOAuthName', 'url' => '/update-custom-oauth-name', 'verb' => 'POST'],
 	   ['name' => 'file#store', 'url' => '/file', 'verb' => 'POST'],
     ]
 ];

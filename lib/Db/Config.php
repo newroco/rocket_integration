@@ -4,10 +4,12 @@ namespace OCA\RocketIntegration\Db;
 
 use OCA\RocketIntegration\AppInfo\Application;
 
-class Config {
+class Config
+{
     protected $rocketChatUrlKey;
     protected $tokenKey;
     protected $userIdKey;
+    protected $customOAuthName;
     protected $appName;
 
     public function __construct()
@@ -15,6 +17,7 @@ class Config {
         $this->rocketChatUrlKey = 'rocket_chat_url';
         $this->tokenKey = 'personal_access_token';
         $this->userIdKey = 'user_id';
+        $this->customOAuthName = 'custom_oauth_name';
         $this->appName = Application::APP_ID;
     }
 
@@ -25,6 +28,18 @@ class Config {
         $query = "SELECT * FROM *PREFIX*appconfig where configkey=? and appid=? LIMIT 1";
 
         $result = $db->executeQuery($query, [$this->rocketChatUrlKey, $this->appName]);
+        $row = $result->fetch();
+
+        return $row ? $row['configvalue'] : '';
+    }
+
+    public function getCustomOAuthName()
+    {
+        $db = \OC::$server->getDatabaseConnection();
+
+        $query = "SELECT * FROM *PREFIX*appconfig where configkey=? and appid=? LIMIT 1";
+
+        $result = $db->executeQuery($query, [$this->customOAuthName, $this->appName]);
         $row = $result->fetch();
 
         return $row ? $row['configvalue'] : '';
@@ -41,18 +56,28 @@ class Config {
         return $result->fetchAll();
     }
 
-    public function storeAdminData($url, $token, $userId)
+    public function storeAdminData($url, $customOAuthName, $token, $userId)
     {
         $db = \OC::$server->getDatabaseConnection();
 
         $urlQuery = "INSERT INTO *PREFIX*appconfig(appid,configkey,configvalue) VALUES(?,?,?)";
         $db->executeQuery($urlQuery, [$this->appName, $this->rocketChatUrlKey, $url]);
 
+        $this->storeCustomOAuthName($customOAuthName);
+
         $tokenQuery = "INSERT INTO *PREFIX*appconfig(appid,configkey,configvalue) VALUES(?,?,?)";
         $db->executeQuery($tokenQuery, [$this->appName, $this->tokenKey, $token]);
 
         $userIdQuery = "INSERT INTO *PREFIX*appconfig(appid,configkey,configvalue) VALUES(?,?,?)";
         $db->executeQuery($userIdQuery, [$this->appName, $this->userIdKey, $userId]);
+    }
+
+    public function storeCustomOAuthName($name)
+    {
+        $db = \OC::$server->getDatabaseConnection();
+
+        $urlQuery = "INSERT INTO *PREFIX*appconfig(appid,configkey,configvalue) VALUES(?,?,?)";
+        $db->executeQuery($urlQuery, [$this->appName, $this->customOAuthName, $name]);
     }
 
     public function resetAdminData()

@@ -21,6 +21,22 @@ style('rocket_integration', 'style');
 
         <hr>
 
+        <p> Your Custom OAuth Name </p>
+
+        <form action="<?= p($_['updateCustomOAuthNameUrl']) ?>" method="post">
+            <input type="text"
+                   value="<?= p($_['customOAuthName']) ?>"
+                   placeholder="Enter Custom OAuth name"
+                   class="input"
+                   name="customOauthName"
+                   id="customOauthName"
+                   required>
+
+            <button type="submit"> Update </button>
+        </form>
+
+        <hr>
+
         <p> You have setup your Personal Access Token and your User ID. </p>
 
         <form action="<?= p($_['resetConfig']) ?>" method="post">
@@ -37,6 +53,17 @@ style('rocket_integration', 'style');
                        name="url"
                        id="url"
                        required
+                       style="width: 20rem;">
+            </div>
+
+            <div>
+                <label for="url">Rocket Chat Custom OAuth Name (Optional)</label>
+
+                <input type="text"
+                       placeholder="Enter Rocket Chat Custom OAuth Name"
+                       class="input"
+                       name="customOauthName"
+                       id="customOauthName"
                        style="width: 20rem;">
             </div>
 

@@ -27,6 +27,8 @@ class AdminSettings implements ISettings {
             'formUrl' => ($this->server->getURLGenerator())->linkToRouteAbsolute($this->appName . '.config.setupUrl'),
             'resetConfig' => ($this->server->getURLGenerator())->linkToRouteAbsolute($this->appName . '.config.resetConfig'),
             'rocketUrl' => $this->config->getUrl(),
+            'customOAuthName' => $this->config->getCustomOAuthName(),
+            'updateCustomOAuthNameUrl' => ($this->server->getURLGenerator())->linkToRouteAbsolute($this->appName . '.config.updateCustomOAuthName'),
         ]);
     }
 

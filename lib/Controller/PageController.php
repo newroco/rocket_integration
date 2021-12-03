@@ -42,6 +42,7 @@ class PageController extends Controller {
         }
 
 		$response = new TemplateResponse($this->appName, 'index', [
+		    'customOAuthName' => $this->config->getCustomOAuthName(),
 		    'url' => $rocketChatUrl,
         ]);
 

@@ -28,11 +28,12 @@ class ConfigController extends Controller {
      *
      * @NoCSRFRequired
      * @param $url
+     * @param $customOauthName
      * @param $personalAccessToken
      * @param $userId
      * @return RedirectResponse
      */
-    public function setupUrl($url, $personalAccessToken, $userId)
+    public function setupUrl($url, $customOauthName, $personalAccessToken, $userId)
     {
         if ( ! ($url && $personalAccessToken && $userId)) {
             return new RedirectResponse(
@@ -42,7 +43,27 @@ class ConfigController extends Controller {
 
         $url = rtrim($url, '/');
 
-        $this->config->storeAdminData($url, $personalAccessToken, $userId);
+        if ( ! $customOauthName) {
+            $customOauthName = '';
+        }
+
+        $this->config->storeAdminData($url, $customOauthName, $personalAccessToken, $userId);
+
+        return new RedirectResponse(
+            ($this->server->getURLGenerator())->linkToRoute($this->appName . '.page.index')
+        );
+    }
+
+    /**
+     * Requires admin.
+     *
+     * @NoCSRFRequired
+     * @param $customOauthName
+     * @return RedirectResponse
+     */
+    public function updateCustomOAuthName($customOauthName)
+    {
+        $this->config->storeCustomOAuthName($customOauthName);
 
         return new RedirectResponse(
             ($this->server->getURLGenerator())->linkToRoute($this->appName . '.page.index')
