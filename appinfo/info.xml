@@ -5,7 +5,7 @@
     <name>Rocket Integration</name>
     <summary>Rocket chat integration for Nextcloud</summary>
     <description><![CDATA[Integrates Rocket Chat.]]></description>
-    <version>0.1</version>
+    <version>0.2</version>
     <licence>agpl</licence>
     <author mail="ionuto@newro.co" >Orzu Ionut</author>
     <namespace>RocketIntegration</namespace>
@@ -13,7 +13,7 @@
     <bugs>https://github.com/newroco/rocket_integration</bugs>
 
     <dependencies>
-        <nextcloud min-version="15" max-version="19"/>
+        <nextcloud min-version="22" max-version="22"/>
     </dependencies>
 
     <activity>
