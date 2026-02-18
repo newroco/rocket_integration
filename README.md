@@ -1,3 +1,5 @@
+THIS REPOSITORY IS DEAD, BOTH NC and Rocket.Chat have changed significantly since it was developed
+
 # Rocket Integration
 Place this app in **nextcloud/apps/**
 
